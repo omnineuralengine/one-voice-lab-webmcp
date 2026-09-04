@@ -1,0 +1,67 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "**/*.mts",
+    ".next-e2e/types/**/*.ts",
+    ".next-e2e/dev/types/**/*.ts",    ".next-live-solution-e2e/types/**/*.ts",
+    ".next-live-solution-e2e/dev/types/**/*.ts",
+    ".next/dev/types/**/*.ts",    ".next-open-lab-e2e/types/**/*.ts",
+    ".next-open-lab-e2e/dev/types/**/*.ts",
+    ".next-pocket-e2e/types/**/*.ts",
+    ".next-pocket-e2e/dev/types/**/*.ts",
+    ".next-provider-rolodex-e2e/types/**/*.ts",
+    ".next-provider-rolodex-e2e/dev/types/**/*.ts",
+    ".next-voice-open-e2e/types/**/*.ts",
+    ".next-voice-open-e2e/dev/types/**/*.ts",
+    ".next-scenario-e2e/types/**/*.ts",
+    ".next-scenario-e2e/dev/types/**/*.ts",
+    ".next-scenario-auth-e2e-ovl05a/types/**/*.ts",
+    ".next-scenario-auth-e2e-ovl05a/dev/types/**/*.ts",
+    ".next-main-ovl05bs-e2e/types/**/*.ts",
+    ".next-main-ovl05bs-e2e/dev/types/**/*.ts",
+    ".next-webmcp-e2e/types/**/*.ts",
+    ".next-webmcp-e2e/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "ONE-voice-lab",
+    "handoff",
+    "tmp",
+    ".next/dev",
+    ".next-e2e/dev",
+    ".next-*/dev",
+    ".next-*/dev/**/*"
+  ]
+}

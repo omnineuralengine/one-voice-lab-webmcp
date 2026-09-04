@@ -1,0 +1,10 @@
+.env*
+.next
+.next-*
+.qa-screens
+.vercel
+node_modules
+playwright-report
+test-results
+coverage
+supabase/.temp

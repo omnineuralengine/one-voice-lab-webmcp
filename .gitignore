@@ -1,0 +1,91 @@
+# Dependencies and package-manager state
+/node_modules/
+/.pnp/
+.pnp.*
+.yarn/*
+!.yarn/patches/
+!.yarn/plugins/
+!.yarn/releases/
+!.yarn/versions/
+
+# Environment and credentials
+.env*
+!.env.example
+*.pem
+*.key
+
+# Framework and build output
+/.next/
+/.next-e2e/
+/.next-*/
+/.vercel/
+/supabase/.temp/
+/out/
+/dist/
+/build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Tests, coverage, caches, and diagnostics
+/coverage/
+/playwright-report/
+/test-results/
+/.qa-screens/
+*.log
+.cache/
+cache/
+diagnostics/
+artifacts/
+exports/
+temp/
+tmp/
+
+# Private or generated handoff material
+/handoff/
+*.zip
+!//releases/*.zip
+*.tar
+*.tar.gz
+*.7z
+recordings/
+transcripts/
+generated-audio/
+browser-recordings/
+realtime-event-dumps/
+temporary-tokens/
+sftp-packages/
+*.sqlite
+*.sqlite3
+*.db
+
+# Local coding-agent state
+/.claude/
+/.entire/
+
+# Local duplicate of the canonical docs/vision whitepaper
+/AVS.pdf
+
+# Generated sample audio is ignored by default. These reviewed, project-owned
+# synthetic fixtures are intentionally retained for a complete local baseline.
+/public/samples/*.mp3
+!/public/samples/automotive-service.mp3
+!/public/samples/ecommerce-return.mp3
+!/public/samples/education-advising.mp3
+!/public/samples/fintech-fraud-alert.mp3
+!/public/samples/healthcare-scheduling.mp3
+!/public/samples/italian-customer-support.mp3
+!/public/samples/italian-travel-booking.mp3
+!/public/samples/japanese-product-support.mp3
+!/public/samples/legal-intake.mp3
+!/public/samples/logistics-delivery-exception.mp3
+!/public/samples/media-podcast-clip.mp3
+!/public/samples/restaurant-reservation.mp3
+!/public/samples/retail-inventory.mp3
+!/public/samples/saas-webhook-support.mp3
+!/public/samples/spanish-customer-service.mp3
+!/public/samples/travel-hospitality.mp3
+
+# Operating-system noise
+.DS_Store
+Thumbs.db
+*.rtf

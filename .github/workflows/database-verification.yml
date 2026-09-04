@@ -1,0 +1,85 @@
+name: Disposable database verification
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: disposable-database-verification-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-database:
+    name: Full migration, pgTAP, concurrency, and lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      ONE_ALLOW_DISPOSABLE_DB_TESTS: "1"
+      SUPABASE_DB_CONTAINER: supabase_db_one-voice-lab-db-tests
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install pinned Supabase CLI
+        uses: supabase/setup-cli@46f7f98c7f948ad727d22c1e67fab04c223a0520 # v3.0.0
+        with:
+          version: 2.116.0
+
+      - name: Verify disposable-only configuration
+        run: |
+          set -euo pipefail
+          unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+          test ! -f supabase/.temp/project-ref
+          grep -Fqx 'project_id = "one-voice-lab-db-tests"' supabase/config.toml
+          supabase --version
+          node --version
+
+      - name: Start disposable local database
+        run: |
+          set -euo pipefail
+          unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+          start_log="$RUNNER_TEMP/supabase-db-start.log"
+          if ! supabase db start >"$start_log" 2>&1; then
+            echo "::error title=Local database start failed::Raw CLI output was withheld because local stack output can contain generated credentials."
+            exit 1
+          fi
+          echo "Disposable local database started."
+
+      - name: Apply the full migration chain from a clean database
+        run: |
+          set -euo pipefail
+          unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+          supabase db reset --local
+          supabase migration list --local
+
+      - name: Run pgTAP database tests
+        run: |
+          set -euo pipefail
+          unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+          supabase test db --local
+
+      - name: Run real Stage 2 admission concurrency tests
+        run: node scripts/test-supabase-concurrency.mjs
+
+      - name: Lint database functions and schemas
+        run: |
+          set -euo pipefail
+          unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+          supabase db lint --local --schema public,private --level warning --fail-on error
+
+      - name: Remove disposable database volumes
+        if: always()
+        run: |
+          if command -v supabase >/dev/null 2>&1; then
+            unset SUPABASE_ACCESS_TOKEN SUPABASE_DB_PASSWORD
+            supabase stop --no-backup --project-id one-voice-lab-db-tests >"$RUNNER_TEMP/supabase-db-stop.log" 2>&1 || true
+          fi
+          echo "Disposable database cleanup attempted; no backup was retained."

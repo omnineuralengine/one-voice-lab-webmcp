@@ -1,0 +1,45 @@
+import { providerManifestSchema } from "@/lib/providers/types";
+
+export const DEEPGRAM_PROVIDER_MANIFEST = providerManifestSchema.parse({
+  id: "deepgram",
+  displayName: "Deepgram",
+  featured: true,
+  visualAccent: "deepgram-green",
+  status: "Working",
+  description: "The Lab's first implemented voice provider, with guarded live paths and labeled deterministic fallbacks.",
+  capabilities: [
+    { id: "models", status: "Working", evidence: "Repository verified", adapterAvailable: true },
+    { id: "voices", status: "Working", evidence: "Repository verified", adapterAvailable: true },
+    { id: "stt-prerecorded", status: "Working", evidence: "Repository verified", adapterAvailable: true },
+    { id: "stt-streaming", status: "Prototype", evidence: "Manual verification required", adapterAvailable: false },
+    { id: "conversational-stt", status: "Prototype", evidence: "Manual verification required", adapterAvailable: false },
+    { id: "tts", status: "Working", evidence: "Repository verified", adapterAvailable: true },
+    { id: "voice-agent", status: "Prototype", evidence: "Manual verification required", adapterAvailable: false },
+    { id: "temporary-browser-auth", status: "Working", evidence: "Repository verified", adapterAvailable: false },
+    { id: "docs-evidence", status: "Partial", evidence: "Repository verified", adapterAvailable: false },
+    { id: "text-intelligence", status: "Working", evidence: "Repository verified", adapterAvailable: false },
+  ],
+  modules: [
+    { id: "transcribe-url", name: "Transcribe URL", href: "/?module=transcribe-url", capabilities: ["stt-prerecorded"] },
+    { id: "upload-audio", name: "Upload Audio", href: "/?module=upload-audio", capabilities: ["stt-prerecorded"] },
+    { id: "live-mic", name: "Live Mic", href: "/?module=live-mic", capabilities: ["stt-streaming", "temporary-browser-auth"] },
+    { id: "aura-tts", name: "Text to Speech", href: "/?module=tts", capabilities: ["tts"] },
+    { id: "flux-tts", name: "Flux TTS Studio", href: "/?module=flux-tts", capabilities: ["tts"] },
+    { id: "flux-observatory", name: "Flux Conversation Observatory", href: "/flux-observatory", capabilities: ["conversational-stt", "temporary-browser-auth"] },
+    { id: "api-studio", name: "API Studio", href: "/?module=api-studio", capabilities: ["voice-agent", "text-intelligence"] },
+    { id: "live-solution", name: "Official Docs Evidence", href: "/live-solution-studio", capabilities: ["docs-evidence"] },
+  ],
+  supportedExperiences: ["talk", "upload", "generate", "agent"],
+  documentationReferences: [
+    { title: "Deepgram developer documentation", url: "https://developers.deepgram.com/docs" },
+  ],
+  environmentVariables: ["DEEPGRAM_API_KEY"],
+  evidence: "Repository verified",
+  liveExecutionEnabled: true,
+  adapterCapabilities: ["models", "voices", "stt-prerecorded", "tts"],
+  limitations: [
+    "Live execution still requires server configuration, explicit user action, and the applicable runtime safety gate.",
+    "Repository and mocked evidence do not establish account entitlement, provider availability, or production readiness.",
+    "Core model/voice discovery, prerecorded Speech to Text, and batch Text to Speech are adapter-backed; realtime/session operations remain outside the batch contracts.",
+  ],
+});

@@ -1,0 +1,259 @@
+[
+  {
+    "slug": "saas-webhook-support",
+    "title": "Webhook Retry Support Call",
+    "vertical": "Customer Support / SaaS",
+    "language": "en",
+    "voiceModel": "aura-2-harmonia-en",
+    "transcript": "Hi, I am calling about an integration issue in our dashboard. The webhook payload for customer ID CUS-1842 is arriving with a timestamp that is two minutes behind, and your retry policy sent the same event four times after a 500 response.",
+    "demoGoal": "Show how technical support calls preserve product terms and IDs.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "keyterms": ["webhook", "payload", "retry policy", "customer ID", "dashboard"]
+    }
+  },
+  {
+    "slug": "healthcare-scheduling",
+    "title": "Fictional Appointment Scheduling",
+    "vertical": "Healthcare Scheduling",
+    "language": "en",
+    "voiceModel": "aura-2-helena-en",
+    "transcript": "This is a fictional scheduling call with no real patient data. I need to move an appointment with Dr. Elena Morris from Tuesday, March 12th at 9:30 AM to Friday, March 15th at 2 PM. The insurance note says in network primary care, referral not required.",
+    "demoGoal": "Exercise smart formatting for dates, times, providers, and insurance wording.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "fintech-fraud-alert",
+    "title": "Suspicious Card Transaction",
+    "vertical": "Fintech Fraud Alert",
+    "language": "en",
+    "voiceModel": "aura-2-neptune-en",
+    "transcript": "I am calling about a suspicious card transaction for $428.19 on April 8th. The card ends in 4472, and I did not authorize a purchase from Northline Electronics. Please escalate this fraud alert, freeze the card, and send a case confirmation.",
+    "demoGoal": "Review money amounts, dates, card digits, and escalation language.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "ecommerce-return",
+    "title": "Wrong Size Return Request",
+    "vertical": "E-commerce Return",
+    "language": "en",
+    "voiceModel": "aura-2-iris-en",
+    "transcript": "I want to return order number RMA-73018 because the jacket was the wrong size. The SKU is JKT-204-BL-M, tracking says delivered yesterday by UPS, and I would like the refund timeline confirmed within five to seven business days.",
+    "demoGoal": "Test order IDs, SKUs, carrier wording, and refund timing.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "retail-inventory",
+    "title": "Store Inventory Check",
+    "vertical": "Retail Store Inventory",
+    "language": "en",
+    "voiceModel": "aura-2-arcas-en",
+    "transcript": "Can you check stock for the Trail Ridge insulated bottle in graphite? Store 114 has three units, store 208 has zero, and store 336 has nine. If the customer orders before noon, the pickup window should be 4 PM to 7 PM today.",
+    "demoGoal": "Demo operational vocabulary, item names, store numbers, and quantities.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true,
+      "keyterms": ["Trail Ridge", "graphite", "pickup window"]
+    }
+  },
+  {
+    "slug": "travel-hospitality",
+    "title": "Hotel Booking Change",
+    "vertical": "Travel / Hospitality",
+    "language": "en",
+    "voiceModel": "aura-2-athena-en",
+    "transcript": "My confirmation code is HZX-4921. I need to change the hotel booking from June 18th through June 21st to June 19th through June 22nd. Please keep the king room type and add late checkout at 1 PM if available.",
+    "demoGoal": "Show formatting for booking codes, dates, room types, and late checkout.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "media-podcast-clip",
+    "title": "AI Audio Podcast Intro",
+    "vertical": "Media / Podcast Clip",
+    "language": "en",
+    "voiceModel": "aura-2-aurora-en",
+    "transcript": "Welcome back to Signal Craft. In this short segment, we are exploring how AI audio tools can make guided sessions easier to search, edit, and share, while still keeping the creator in control of the final story.",
+    "demoGoal": "Produce a clean transcript for polished spoken content.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false
+    }
+  },
+  {
+    "slug": "legal-intake",
+    "title": "Fictional Intake Call",
+    "vertical": "Legal Intake",
+    "language": "en",
+    "voiceModel": "aura-2-orpheus-en",
+    "transcript": "This is a fictional legal intake example and not legal advice. The reference ID is INTAKE-2026-041. The incident date was May 6th, the follow-up deadline is May 20th, and the next step is to send the signed questionnaire.",
+    "demoGoal": "Support privacy and redaction discussion around IDs, dates, and next steps.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "education-advising",
+    "title": "Transfer Credit Advising",
+    "vertical": "Education / Advising",
+    "language": "en",
+    "voiceModel": "aura-2-minerva-en",
+    "transcript": "I have 42 transfer credits and want to finish the online degree by next spring. Can you confirm whether BIO 110 and ENG 204 count toward the core requirements, and whether the application deadline is August 1st?",
+    "demoGoal": "Capture course numbers, credit counts, deadlines, and future action items.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "automotive-service",
+    "title": "Brake Service Booking",
+    "vertical": "Automotive Service",
+    "language": "en",
+    "voiceModel": "aura-2-mars-en",
+    "transcript": "I need to book service for squeaking brakes and a dashboard warning light. The mileage is 68,450, the VIN placeholder is 1HGBH41JXMN109186, and I can come in Thursday at 10:15 AM.",
+    "demoGoal": "Test mileage, VIN-style strings, service symptoms, and appointment times.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "logistics-delivery-exception",
+    "title": "Delayed Delivery Dispatch",
+    "vertical": "Logistics / Delivery Exception",
+    "language": "en",
+    "voiceModel": "aura-2-saturn-en",
+    "transcript": "Dispatch update for route 27B: delivery is delayed by 45 minutes because dock 6 is blocked. ETA is now 3:40 PM, trailer T-918 has 14 pallets, and the receiver asked us to check in at gate 2.",
+    "demoGoal": "Demonstrate operational transcription for routes, ETA, dock numbers, and pallet counts.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true,
+      "keyterms": ["route 27B", "dock 6", "gate 2"]
+    }
+  },
+  {
+    "slug": "restaurant-reservation",
+    "title": "Reservation Change",
+    "vertical": "Restaurant Reservation",
+    "language": "en",
+    "voiceModel": "aura-2-luna-en",
+    "transcript": "I need to change tonight's reservation from a party of four to a party of six at 7:30 PM. Please add a peanut allergy note, and the phone number on the booking ends with 0198.",
+    "demoGoal": "Check party count, time formatting, allergy notes, and phone-number style phrases.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "en",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "italian-customer-support",
+    "title": "Supporto Account e Fattura",
+    "vertical": "Italian Customer Support",
+    "language": "it",
+    "voiceModel": "aura-2-livia-it",
+    "transcript": "Buongiorno, non riesco ad accedere al mio account dopo il cambio password. Vorrei anche controllare la fattura numero IT-4821 del 14 maggio, perche sembra che il pagamento annuale sia stato addebitato due volte.",
+    "demoGoal": "Test Italian STT, account language, invoice IDs, and billing terms.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "it",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "italian-travel-booking",
+    "title": "Conferma Prenotazione Hotel",
+    "vertical": "Italian Travel Booking",
+    "language": "it",
+    "voiceModel": "aura-2-dionisio-it",
+    "transcript": "Salve, vorrei confermare la prenotazione dell'hotel con codice RM-7392 dal 3 al 6 settembre. Arrivero dopo le 23, quindi chiedo di aggiungere l'arrivo tardivo e mantenere la camera matrimoniale.",
+    "demoGoal": "Validate Italian language selection with reservation codes, dates, and late arrival.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "it",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "spanish-customer-service",
+    "title": "Consulta de Facturacion",
+    "vertical": "Spanish Customer Service",
+    "language": "es",
+    "voiceModel": "aura-2-nestor-es",
+    "transcript": "Hola, tengo una pregunta sobre mi factura de julio. El plan mensual deberia costar 29 dolares, pero veo un cargo de 49 dolares. Pueden revisar la cuenta y explicarme la diferencia?",
+    "demoGoal": "Exercise Spanish STT for simple billing support.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "es",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  },
+  {
+    "slug": "japanese-product-support",
+    "title": "Product Support Request",
+    "vertical": "Japanese Product Support",
+    "language": "ja",
+    "voiceModel": "aura-2-izanami-ja",
+    "transcript": "こんにちは。昨日届いたスマートスピーカーの設定で困っています。アプリに製品番号 JP-2048 を入れても、Wi-Fi 接続が30秒後に失敗します。交換ではなく、まず設定手順を確認したいです。",
+    "demoGoal": "Test Japanese STT with product support wording and a product code.",
+    "recommendedDeepgramOptions": {
+      "model": "nova-3",
+      "language": "ja",
+      "smart_format": true,
+      "diarize": false,
+      "numerals": true
+    }
+  }
+]

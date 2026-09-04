@@ -1,0 +1,4 @@
+import { defineConfig, devices } from "@playwright/test";
+const baseURL = process.env.PLAYWRIGHT_BASE_URL ?? "http://127.0.0.1:3112";
+const useExistingServer = process.env.PLAYWRIGHT_USE_EXISTING_SERVER === "1";
+export default defineConfig({ metadata: { studio: "live-solution" }, testDir: "./tests/e2e", testMatch: "live-solution-studio.spec.ts", workers: 1, reporter: [["list"]], use: { ...devices["Desktop Chrome"], baseURL, colorScheme: "dark", screenshot: "only-on-failure", trace: "retain-on-failure", viewport: { width: 1440, height: 900 } }, webServer: useExistingServer ? undefined : { command: "npm run dev -- --hostname 127.0.0.1 --port 3112", url: `${baseURL}/live-solution-studio`, reuseExistingServer: false, timeout: 120000, env: { DEEPGRAM_API_KEY: "", PLAYWRIGHT_E2E: "1", PLAYWRIGHT_DIST_DIR: ".next-live-solution-e2e" } } });
